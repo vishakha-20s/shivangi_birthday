@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Vangidaa!!! 🐷</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #ffd6e8, #ffe6f2, #e6f7ff, #fceaff);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.pig {
+    font-size: 110px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+h1 {
+    color: #ff4d88;
+    font-size: 42px;
+    text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+}
+
+p {
+    font-size: 22px;
+    color: #cc0066;
+}
+
+/* Cake */
+.cake {
+    font-size: 90px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cake:active {
+    transform: scale(0.8) rotate(-20deg);
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px pink;
+    display: none;
+    z-index: 10;
+    animation: popupAnim 0.5s ease;
+}
+
+@keyframes popupAnim {
+    from { transform: translate(-50%, -60%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.closeBtn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    background: #ff99cc;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    font-size: 50px;
+    animation: rise 12s linear infinite;
+}
+
+.balloon:nth-child(1) { left: 10%; animation-duration: 8s; }
+.balloon:nth-child(2) { left: 30%; animation-duration: 10s; }
+.balloon:nth-child(3) { left: 50%; animation-duration: 12s; }
+.balloon:nth-child(4) { left: 70%; animation-duration: 9s; }
+.balloon:nth-child(5) { left: 85%; animation-duration: 11s; }
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    font-size: 20px;
+    animation: sparkleAnim 3s linear infinite;
+}
+
+@keyframes sparkleAnim {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-100px); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎈 Balloons -->
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+
+<!-- ✨ Sparkles -->
+<div class="sparkle" style="left:20%; bottom:10%;">✨</div>
+<div class="sparkle" style="left:60%; bottom:15%;">✨</div>
+<div class="sparkle" style="left:80%; bottom:5%;">✨</div>
+
+<div class="container">
+    <div class="pig">🐷</div>
+    <h1>Happiesttt Birthday Vangidaaa!</h1>
+    <p>(bhundudu)! 😁🐽</p>
+    <p>We'll always love youu vangiii humesha humeshaaa! 💖</p>
+    
+    <div class="cake" onclick="cutCake()">🎂</div>
+    <p>✨ Chalooo cake cutttt karooo!!!! 🎉</p>
+</div>
+
+<!-- 💌 Popup -->
+<div class="popup" id="surprise">
+    <h2>Supriseeeee! 💌</h2>
+    <p>
+        Yaar vangii tu ek dum cutuuu bachuu choo 🥺💖<br>
+        We love you foreverrrr!!!!<br>
+        Humesha humeshaaa!!! 💕
+    </p>
+    <button class="closeBtn" onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function cutCake() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("surprise").style.display = "none";
+}
+</script>
+
+</body>
+</html>
